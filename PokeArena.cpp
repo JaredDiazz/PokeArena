@@ -202,7 +202,7 @@ int main() {
                     break;
                 }
                 //Turno de la cpu donde va seleccion un ataque al azar
-                if (hpE < 0)
+                if (hpE > 0)
                 {
                     proteccionE = false;
                     int accionE = rand() % 2 + 1;
