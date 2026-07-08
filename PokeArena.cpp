@@ -16,7 +16,7 @@ int main() {
     int ataquePokemon[8] = {20, 20, 20, 20, 20, 20, 20, 20};
     int defensaPokemon[8] = {50, 50, 50, 50, 50, 50, 50, 50};
     //Variables de combate
-    int intentosProteccionJ, intentosProteccionE;
+    int intentosProteccionJ, intentosProteccionE = 0;
     int hpJ = vidaPokemon[opcionPokemon];
     int hpE = vidaPokemon[enemigoElegido];
     bool proteccionJ, proteccionE = false;
