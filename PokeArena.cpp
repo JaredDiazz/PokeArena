@@ -16,10 +16,13 @@ int main() {
     int ataquePokemon[8] = {20, 20, 20, 20, 20, 20, 20, 20};
     int defensaPokemon[8] = {50, 50, 50, 50, 50, 50, 50, 50};
     //Variables de combate
-    int intentosProteccionJ, intentosProteccionE = 0;
     int hpJ = vidaPokemon[opcionPokemon];
     int hpE = vidaPokemon[enemigoElegido];
-    bool proteccionJ, proteccionE = false;
+    int intentosProteccionJ = 0;
+    int intentosProteccionE = 0;
+    bool proteccionJ = false;
+    bool proteccionE = false;
+    
 
     cout << R"(
        ⠀⢢⣤⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⢀⣀⣠⣤⣶⣶⡟⠁⠀⠀⠀⠀⠀
@@ -53,7 +56,7 @@ int main() {
              (PRESIONA ENTER PARA COMENZAR EL JUEGO)
     )";
     cin.get();
-    system("cls");
+    
     //Peticion nombre jugador
     cout << "Ingresa tu nombre de entrenador: ";
     cin >> nombreEntrenador;
@@ -118,6 +121,8 @@ int main() {
                 enemigoElegido = rand() % 8;
             }
             cout << "Lucharas contra " << nombrePokemon[enemigoElegido] << endl;
+            
+
         break;
         }
         case 2:
