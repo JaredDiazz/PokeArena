@@ -285,6 +285,7 @@ int main() {
             if (historial.is_open())
             {
                 historial << "Entrenador: " << nombreEntrenador << " Modo: 1v1" << " Pokemon: " << nombrePokemon[opcionPokemon] << " Resultado: " << (jugadorGanador ? "Gano" : "Perdio") << endl;
+                historial.close();
             }
             system("pause");
         break;
@@ -557,6 +558,13 @@ int main() {
             {
                 cout << "Has debilita a los pokemons enemigos. Has ganado." << endl;
                 jugadorGanador = true;
+            }
+            //Guardar partida 2v2
+            ofstream historial("historial.txt", ios::app);
+            if (historial.is_open())
+            {
+            historial << "Entrenador: " << nombreEntrenador << " Modo: 2v2" << " Pokemon: " << nombrePokemon[equipoPokemon[0]] << " y " << nombrePokemon[equipoPokemon[1]] << " Resultado: " << (jugadorGanador ? "Gano" : "Perdio") << endl;
+            historial.close();
             }
             system("pause");
         break;
