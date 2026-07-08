@@ -337,7 +337,15 @@ int main() {
             while (equipoEnemigo[1] == equipoPokemon[0] || equipoEnemigo[1] == equipoPokemon[1])   {
                 equipoEnemigo[1] = rand() % 8;
             }        
-            cout << "Lucharas contra " << nombrePokemon[equipoEnemigo[0]] << " y " << nombrePokemon[equipoEnemigo[1]] << endl;     
+            cout << "Lucharas contra " << nombrePokemon[equipoEnemigo[0]] << " y " << nombrePokemon[equipoEnemigo[1]] << endl;    
+            //Declaracion de variables para el combate 
+            int hpJ[2] = { vidaPokemon[equipoPokemon[0]], vidaPokemon[equipoPokemon[1]] };
+            int hpE[2] = { vidaPokemon[equipoEnemigo[0]], vidaPokemon[equipoEnemigo[1]] };
+            int pokemonActivoJ = 0;
+            int pokemonActivoE = 0;
+            int intentosProteccionJ = 0;
+            bool proteccionJ = false;
+
         break;
         }
         case 3:
