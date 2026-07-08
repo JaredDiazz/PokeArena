@@ -66,8 +66,7 @@ int main() {
         cout << "Ingresa una opcion: " << endl;
         cin >> opcionMenu;
 
-        switch (opcionMenu)
-        {
+        switch (opcionMenu) {
         case 1:
         {
             system("cls");
@@ -199,7 +198,36 @@ int main() {
                         break;
                     }
                 }
-                
+                //Turno de la cpu donde va seleccion un ataque al azar
+                if (hpE < 0)
+                {
+                    proteccionE = false;
+                    int accionE = rand() % 3 + 1;
+                    switch (accionE) {
+                    case 1:
+                    {
+                        if (proteccionJ)
+                        {
+                            cout << nombrePokemon[enemigoElegido] << " ataco, pero " << nombrePokemon[opcionPokemon] << " se protegio." << endl;
+                        }
+                        else 
+                        {
+                            int dano = ataquePokemon[enemigoElegido] - (defensaPokemon[opcionPokemon] / 2);
+                            if((tipoPokemon[enemigoElegido] + 1) % 4 == tipoPokemon[opcionPokemon])
+                            {
+                                dano = dano * 1.2;
+                                cout << "¡El ataque enemigo es efectivo!" << endl;
+                            }
+                            hpJ -= dano;
+                            cout << "Giovanni utilizo ataque rapido." << endl;
+                            cout << "Causo " << dano << " de daño a " << nombrePokemon[opcionPokemon] << endl;
+                        }
+                        intentosProteccionE = 0;
+                        break;
+                    }
+                    
+                    }
+                }
             }
         break;
         }
