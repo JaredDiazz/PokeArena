@@ -61,8 +61,21 @@ int main() {
         cout << "========================" << endl;
         cout << "Ingresa una opcion: ";
         cin >> opcion;
-
         cout << opcion;
+
+        switch (opcion)
+        {
+        case 1:
+        break;
+        case 2:
+        break;
+        case 3:
+        break;
+        case 4:
+        break;
+        default:
+            break;
+        }
     }
 
     return 0;  
