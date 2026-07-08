@@ -5,7 +5,7 @@ using namespace std;
 int main() {
     SetConsoleOutputCP(CP_UTF8);
     string nombreEntrenador;
-    int opcionMenu, opcionPokemon, enemigoElegido, equipoPokemon[2];
+    int opcionMenu, opcionPokemon, enemigoElegido, equipoPokemon[2], equipoEnemigo[2];
     //TipoPokemon: fuego == 0, agua == 1, electrico == 2, planta == 3
     string nombrePokemon[8] = {"Charizard", "Arcanine", "Blastoise", "Gyarados", "Electabuzz", "Jolteon", "Venusaur", "Victreebel"};
     int tipoPokemon[8] = {0, 0, 1, 1, 2, 2, 3, 3};
@@ -107,8 +107,8 @@ int main() {
                 enemigoElegido = rand() % 8;
             }
             cout << "Lucharas contra " << nombrePokemon[enemigoElegido] << endl;
-        }
         break;
+        }
         case 2:
         {
             //Listado de pokemons
@@ -124,7 +124,7 @@ int main() {
                     case 2: nombreTipo =  "Electrico"; colorTipo = "\033[33m"; break;
                     case 3: nombreTipo =  "Planta"; colorTipo = "\033[32m"; break;
                 }
-                cout << i << ". " << nombrePokemon[i] << " Tipo: " << colorTipo << nombreTipo << "\033[0m" << " HP: " << vidaPokemon[i] << " ATK: " << ataquePokemon[i] << " DEF: " << defensaPokemon[i] << endl;
+                cout << i << ". " << nombrePokemon[i] << " TIPO: " << colorTipo << nombreTipo << "\033[0m" << " HP: " << vidaPokemon[i] << " ATK: " << ataquePokemon[i] << " DEF: " << defensaPokemon[i] << endl;
                 cout << "================================================" << endl;
             }
         //Creacion de la eleccion de dos pokemons para el combate 2v2
@@ -132,7 +132,7 @@ int main() {
             {
                 bool confirmacion = false;
                 while(!confirmacion){
-                    cout << "Elije tu pokemon: Numero " << (i + 1) << endl;
+                    cout << "Elije tu pokemon numero " << (i + 1) << endl;
                     cin >> opcionPokemon;
                     //Validacion
                     if  (opcionPokemon < 0 || opcionPokemon > 7)
@@ -158,8 +158,18 @@ int main() {
                     }
                 }
             }
-        }
+            //Eleccion del equipo enemigo por la cpu junto con validacion para no repetir los pokemons del jugador
+            equipoEnemigo[0] = rand() % 8;
+            while (equipoEnemigo[0] == equipoPokemon[0] || equipoEnemigo[0] == equipoPokemon[1])   {
+                equipoEnemigo[0] = rand() % 8;
+            }        
+            equipoEnemigo[1] = rand() % 8;
+            while (equipoEnemigo[1] == equipoPokemon[0] || equipoEnemigo[1] == equipoPokemon[1])   {
+                equipoEnemigo[1] = rand() % 8;
+            }        
+            cout << "Lucharas contra " << nombrePokemon[equipoEnemigo[0]] << " y " << nombrePokemon[equipoEnemigo[1]] << endl;     
         break;
+        }
         case 3:
         break;
         case 4:
