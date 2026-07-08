@@ -2,6 +2,7 @@
 #include <windows.h>
 #include <cstdlib> 
 #include <ctime>
+#include <fstream>
 using namespace std;
 
 int main() {
@@ -278,6 +279,12 @@ int main() {
             {
                 cout << "El " << nombrePokemon[enemigoElegido] << " se debilito. Has ganado." << endl;
                 jugadorGanador = true;
+            }
+            //Guardar historial de la partida 1v1
+            ofstream historial("historial.txt", ios::app);
+            if (historial.is_open())
+            {
+                historial << "Entrenador: " << nombreEntrenador << " Modo: 1v1" << " Pokemon: " << nombrePokemon[opcionPokemon] << " Resultado: " << (jugadorGanador ? "Gano" : "Perdio") << endl;
             }
             system("pause");
         break;
