@@ -416,7 +416,7 @@ int main() {
                     }
                     else 
                     {
-                    cout << nombrePokemon[equipoEnemigo[pokemonActivoJ]] << " ha fallado el ataque." << endl;
+                    cout << nombrePokemon[equipoPokemon[pokemonActivoJ]] << " ha fallado el ataque." << endl;
                     }
                     intentosProteccionJ = 0;
                     break;
@@ -455,7 +455,7 @@ int main() {
                     int pokemonBanca;
                     if (pokemonActivoJ == 0)
                     {
-                        pokemonBanca == 1;
+                        pokemonBanca = 1;
                     }
                     else
                     {
