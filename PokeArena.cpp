@@ -368,7 +368,7 @@ int main() {
                 }
                 if (hpE[pokemonActivoE] <= 0)
                 {
-                    if (pokemonActivoE)
+                    if (pokemonActivoE == 0)
                     {
                         pokemonActivoE = 1;
                     }
