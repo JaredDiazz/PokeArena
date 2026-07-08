@@ -197,6 +197,9 @@ int main() {
                         intentosProteccionJ++;
                         break;
                     }
+                    default:
+                    cout << "No ingresaste una opcion valida, perdiste tu turno." << endl;
+                    break;
                 }
                 //Turno de la cpu donde va seleccion un ataque al azar
                 if (hpE < 0)
@@ -250,7 +253,8 @@ int main() {
                         }    
                         else {
                             cout << nombrePokemon[enemigoElegido] << " ha fallado el ataque." << endl;
-                        }      
+                        }   
+                        break;
                     }
                     }
                 }
