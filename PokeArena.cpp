@@ -202,7 +202,7 @@ int main() {
                 if (hpE < 0)
                 {
                     proteccionE = false;
-                    int accionE = rand() % 3 + 1;
+                    int accionE = rand() % 2 + 1;
                     switch (accionE) {
                     case 1:
                     {
@@ -225,7 +225,33 @@ int main() {
                         intentosProteccionE = 0;
                         break;
                     }
-                    
+                    case 2:
+                    {
+                        int precision = 50;
+                        int probabilidad = rand() %100;
+                        if (probabilidad < precision)
+                        {
+                            if (proteccionJ)
+                            {
+                                cout << nombrePokemon[enemigoElegido] << " ataco, pero " << nombrePokemon[opcionPokemon] << " se protegio." << endl;
+                            }
+                            else
+                            {
+                                int dano = (ataquePokemon[enemigoElegido] - (defensaPokemon[opcionPokemon] / 2)) * 1.1;
+                                if ((tipoPokemon[enemigoElegido] + 1) % 4 == tipoPokemon[opcionPokemon])
+                                {
+                                    dano = dano * 1.2;
+                                    cout << "¡El ataque enemigo es efectivo!" << endl;
+                                }
+                                hpJ -= dano;
+                                cout << "Giovanni utilizo ataque pesado." << endl;
+                                cout << "Causo " << dano << " de daño a " << nombrePokemon[opcionPokemon] << endl;
+                            }
+                        }    
+                        else {
+                            cout << nombrePokemon[enemigoElegido] << " ha fallado el ataque." << endl;
+                        }      
+                    }
                     }
                 }
             }
