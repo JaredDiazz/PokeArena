@@ -69,7 +69,15 @@ int main() {
             cout << "Haz seleccionado Batalla 1 vs 1, elije tus pokemons:" << endl;
             cout << "==========POKEMONS==========" << endl;
             for (int i = 0; i < 8; i++) {
-                cout << i << ". " << nombrePokemon[i] << " Tipo: " << tipoPokemon[i] << " HP: " << vidaPokemon[i] << " ATK: " << ataquePokemon[i] << " DEF: " << defensaPokemon[i] << endl;
+                string nombreTipo;
+                string colorTipo;
+                switch (tipoPokemon[i]){
+                    case 0: nombreTipo =  "Fuego"; colorTipo = "\033[31m"; break;
+                    case 1: nombreTipo =  "Agua"; colorTipo = "\033[36m"; break;
+                    case 2: nombreTipo =  "Electrico"; colorTipo = "\033[33m"; break;
+                    case 3: nombreTipo =  "Planta"; colorTipo = "\033[32m"; break;
+                }
+                cout << i << ". " << nombrePokemon[i] << " Tipo: " << colorTipo << nombreTipo << "\033[0m" << " HP: " << vidaPokemon[i] << " ATK: " << ataquePokemon[i] << " DEF: " << defensaPokemon[i] << endl;
                 cout << "============================" << endl;
             }
         break;
