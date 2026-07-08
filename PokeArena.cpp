@@ -571,7 +571,31 @@ int main() {
         }
         case 3:
         {
-
+            //ver historial de partidas
+            system("cls");
+            cout << "===============HISTORIAL DE PARTIDAS===============" << endl;
+            ifstream historial("historial.txt");
+            if (historial.is_open())
+            {
+                string info;
+                bool hayInfo = false;
+                while (getline(historial, info))
+                {
+                    cout << info << endl;
+                    hayInfo = true;
+                }
+                historial.close();
+                if (!hayInfo)
+                {
+                    cout << "No hay partidas registradas." << endl;
+                }
+            }
+            else
+            {
+                cout << "No hay partidas registradas." << endl;
+            }
+            cout << "==================================================" << endl;
+            system("pause");
             break;
         }
         case 4:
