@@ -271,9 +271,10 @@ int main() {
             }
             else
             {
-                cout << "El " << nombrePokemon[enemigoElegido] << " se ddebilito. Has ganado." << endl;
+                cout << "El " << nombrePokemon[enemigoElegido] << " se debilito. Has ganado." << endl;
                 jugadorGanador = true;
             }
+            system("pause");
         break;
         }
         case 2:
