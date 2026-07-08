@@ -22,7 +22,7 @@ int main() {
     int intentosProteccionE = 0;
     bool proteccionJ = false;
     bool proteccionE = false;
-    int accionJ;
+    int accionJ = 0;
     
 
     cout << R"(
