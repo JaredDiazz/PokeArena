@@ -452,12 +452,32 @@ int main() {
                 }
                 case 4:
                 {
-
+                    int pokemonBanca;
+                    if (pokemonActivoJ == 0)
+                    {
+                        pokemonBanca == 1;
+                    }
+                    else
+                    {
+                         pokemonBanca = 0;
+                    }
+                    if (hpJ[pokemonBanca] <= 0)
+                    {
+                        cout << nombrePokemon[equipoPokemon[pokemonActivoJ]] << " ya esta debilitado, no puede entrar al combate" << endl;
+                    }
+                    else
+                    {
+                        pokemonActivoJ = pokemonBanca;
+                        cout << nombrePokemon[equipoPokemon[pokemonActivoJ]] << " yo te elijo.";
+                    }
+                    intentosProteccionJ = 0;
                     break;
                 }
                 default:
+                cout << "No ingresaste una opcion valida, perdiste tu turno." << endl;
                 break;
                 }
+                
             }
         break;
         }
