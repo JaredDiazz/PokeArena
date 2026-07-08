@@ -60,13 +60,18 @@ int main() {
         cout << "||  3. Historial      ||" << endl;
         cout << "||  4. Salir          ||" << endl;
         cout << "========================" << endl;
-        cout << "Ingresa una opcion: ";
+        cout << "Ingresa una opcion: " << endl;
         cin >> opcionMenu;
-        cout << opcionMenu;
 
         switch (opcionMenu)
         {
         case 1:
+            cout << "Haz seleccionado Batalla 1 vs 1, elije tus pokemons:" << endl;
+            cout << "==========POKEMONS==========" << endl;
+            for (int i = 0; i < 8; i++) {
+                cout << "      " << i << ". " << nombrePokemon[i] << endl;
+                cout << "============================" << endl;
+            }
         break;
         case 2:
         break;
