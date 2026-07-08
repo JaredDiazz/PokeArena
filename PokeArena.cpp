@@ -262,6 +262,18 @@ int main() {
                     system("pause");
                 }
             }
+            bool jugadorGanador;
+            cout << "===============RESULTADO DE LA PARTIDA================" << endl;
+            if (hpJ <= 0)
+            {
+                cout << "Tu " << nombrePokemon[opcionPokemon] << " se debilito. Has perdido." << endl;
+                jugadorGanador = false;
+            }
+            else
+            {
+                cout << "El " << nombrePokemon[enemigoElegido] << " se ddebilito. Has ganado." << endl;
+                jugadorGanador = true;
+            }
         break;
         }
         case 2:
