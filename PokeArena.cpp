@@ -111,6 +111,7 @@ int main() {
                 enemigoElegido = rand() % 8;
             }
             cout << "Lucharas contra " << nombrePokemon[enemigoElegido] << endl;
+            system("pause");
             //Variables de combate
             int hpJ = vidaPokemon[opcionPokemon];
             int hpE = vidaPokemon[enemigoElegido];
@@ -338,6 +339,7 @@ int main() {
                 equipoEnemigo[1] = rand() % 8;
             }        
             cout << "Lucharas contra " << nombrePokemon[equipoEnemigo[0]] << " y " << nombrePokemon[equipoEnemigo[1]] << endl;    
+            system("pause");
             //Declaracion de variables para el combate 
             int hpJ[2] = { vidaPokemon[equipoPokemon[0]], vidaPokemon[equipoPokemon[1]] };
             int hpE[2] = { vidaPokemon[equipoEnemigo[0]], vidaPokemon[equipoEnemigo[1]] };
@@ -378,6 +380,33 @@ int main() {
                 cout << "HP de " << nombrePokemon[equipoEnemigo[pokemonActivoJ]] << ": " << hpJ[pokemonActivoJ] << "            HP de " << nombrePokemon[equipoEnemigo[pokemonActivoE]] << ": " << hpE[pokemonActivoE] << endl;
                 cout << "¿Que haras? \n 1. Ataque rapido \n 2. Ataque pesado \n 3. Proteccion \n 4. Cambiar pokemon" << endl;
                 cout << "=======================================================" << endl;
+                int accionJ;
+                cin >> accionJ;
+                switch (accionJ)
+                {
+                case 1:
+                {
+
+                break;
+                }
+                case 2:
+                {
+
+                break;
+                }
+                case 3:
+                {
+
+                break;
+                }
+                case 4:
+                {
+
+                break;
+                }
+                default:
+                break;
+                }
             }
         break;
         }
