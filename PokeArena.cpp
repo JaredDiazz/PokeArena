@@ -45,6 +45,7 @@ int main() {
              (PRESIONA ENTER PARA COMENZAR EL JUEGO)
     )";
     cin.get();
+    system("cls");
     //Peticion nombre jugador
     cout << "Ingresa tu nombre de entrenador: ";
     cin >> nombreEntrenador;
@@ -52,6 +53,7 @@ int main() {
     //Menu principal
     bool salir = false;
     while (!salir) {
+        system("cls");
         cout << "¡Bienvenido a PokeArena, " << nombreEntrenador << "!" << endl;
         cout << "==========MENU==========" << endl;
         cout << "||  1. Batalla 1v1    ||" << endl;
@@ -66,6 +68,7 @@ int main() {
         {
         case 1:
         {
+            system("cls");
             //Listado de pokemons
             cout << "Haz seleccionado Batalla 1 vs 1, observa los pokemons disponibles:" << endl;
             cout << "====================POKEMONS====================" << endl;
@@ -111,6 +114,7 @@ int main() {
         }
         case 2:
         {
+            system("cls");
             //Listado de pokemons
             cout << "Haz seleccionado Batalla 2 vs 2, observa los pokemons disponibles:" << endl;
             cout << "====================POKEMONS====================" << endl;
