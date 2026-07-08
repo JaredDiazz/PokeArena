@@ -4,6 +4,7 @@ using namespace std;
 
 int main() {
     SetConsoleOutputCP(CP_UTF8);
+    string nombreEntrenador;
     // tipoPokemon: fuego == 0, agua == 1, electrico == 2, planta == 3
     string nombrePokemon[8] = {"Charizard", "Arcanine", "Blastoise", "Gyarados", "Electabuzz", "Jolteon", "Venusaur", "Victreebel"};
     int tipoPokemon[8] = {0, 0, 1, 1, 2, 2, 3, 3};
@@ -45,5 +46,10 @@ int main() {
     )";
     cin.get();
     
+    cout << "Ingresa tu nombre de entrenador: ";
+    cin >> nombreEntrenador;
+
+    cout << nombreEntrenador;
+
     return 0;  
 }
