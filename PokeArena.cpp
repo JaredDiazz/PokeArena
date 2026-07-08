@@ -262,6 +262,7 @@ int main() {
                     system("pause");
                 }
             }
+            //Resultado de la partida
             bool jugadorGanador;
             cout << "===============RESULTADO DE LA PARTIDA================" << endl;
             if (hpJ <= 0)
