@@ -13,16 +13,8 @@ int main() {
     string nombrePokemon[8] = {"Charizard", "Arcanine", "Blastoise", "Gyarados", "Electabuzz", "Jolteon", "Venusaur", "Victreebel"};
     int tipoPokemon[8] = {0, 0, 1, 1, 2, 2, 3, 3};
     int vidaPokemon[8] = {200, 200, 200, 200, 200, 200, 200, 200};
-    int ataquePokemon[8] = {20, 20, 20, 20, 20, 20, 20, 20};
-    int defensaPokemon[8] = {50, 50, 50, 50, 50, 50, 50, 50};
-    //Variables de combate
-    int hpJ = vidaPokemon[opcionPokemon];
-    int hpE = vidaPokemon[enemigoElegido];
-    int intentosProteccionJ = 0;
-    int intentosProteccionE = 0;
-    bool proteccionJ = false;
-    bool proteccionE = false;
-
+    int ataquePokemon[8] = {80, 80, 80, 80, 80, 80, 80, 80};
+    int defensaPokemon[8] = {20, 20, 20, 20, 20, 20, 20, 20};
     cout << R"(
        ⠀⢢⣤⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⢀⣀⣠⣤⣶⣶⡟⠁⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣷⣶⣦⣤⣀⡀⠀⠀⠀⠀⢀⣀⣤⣴⣶⣶⣶⣶⣶⣶⣦⣤⣀⡀⢀⣀⣠⣤⣴⣶⣾⣿⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀
@@ -120,6 +112,13 @@ int main() {
                 enemigoElegido = rand() % 8;
             }
             cout << "Lucharas contra " << nombrePokemon[enemigoElegido] << endl;
+            //Variables de combate
+            int hpJ = vidaPokemon[opcionPokemon];
+            int hpE = vidaPokemon[enemigoElegido];
+            int intentosProteccionJ = 0;
+            int intentosProteccionE = 0;
+            bool proteccionJ = false;
+            bool proteccionE = false;
             //Inicio del combate 1v1
             while (hpJ > 0 && hpE > 0)
             {
@@ -131,7 +130,19 @@ int main() {
                 cin >> accionJ;
                 //Calculos del combate
                 switch(accionJ){
-                    
+                    case 1:
+                    {
+                        int dano = ataquePokemon[opcionPokemon] - (defensaPokemon[enemigoElegido] / 2);
+                        if ((tipoPokemon[opcionPokemon] + 1) / 4 == tipoPokemon[enemigoElegido]){
+                            dano = dano * 1.5;
+                            cout << "¡El ataque es efectivo!" << endl;
+                        }
+                        hpE -= dano;
+                        cout << nombreEntrenador << " utilizo ataque rapido." << endl;
+                        cout << "Causo " << dano << " de daño a " << nombrePokemon[enemigoElegido] << endl;
+                        intentosProteccionJ = 0;
+                        break;
+                    }
                 }
             }
         break;
