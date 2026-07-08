@@ -477,8 +477,78 @@ int main() {
                 cout << "No ingresaste una opcion valida, perdiste tu turno." << endl;
                 break;
                 }
-                
+                //Turno de la cpu donde va seleccion un ataque al azar
+                if (hpE[equipoEnemigo[pokemonActivoE]] > 0)
+                {
+                int accionE = rand() % 2 + 1;
+                switch (accionE) {
+                case 1:
+                {
+                    if (proteccionJ)
+                    {
+                    cout << nombrePokemon[equipoEnemigo[pokemonActivoE]] << " ataco, pero " << nombrePokemon[equipoPokemon[pokemonActivoJ]] << " se protegio." << endl;
+                    }
+                    else 
+                    {
+                    int dano = ataquePokemon[equipoEnemigo[pokemonActivoE]] - (defensaPokemon[equipoPokemon[pokemonActivoJ]] / 2);
+                    if((tipoPokemon[equipoEnemigo[pokemonActivoE]] + 1) % 4 == tipoPokemon[equipoPokemon[pokemonActivoJ]])
+                    {
+                    dano = dano * 1.2;
+                    cout << "¡El ataque enemigo es efectivo!" << endl;
+                    }
+                    hpJ[pokemonActivoJ] -= dano;
+                    cout << "Giovanni utilizo ataque rapido." << endl;
+                    cout << "Causo " << dano << " de daño a " << nombrePokemon[equipoPokemon[pokemonActivoJ]] << endl;
+                    }
+                    break;
+                }
+                case 2:
+                {
+                    int precision = 50;
+                    int probabilidad = rand() %100;
+                    if (probabilidad < precision)
+                    {
+                    if (proteccionJ)
+                    {
+                    cout << nombrePokemon[equipoEnemigo[pokemonActivoE]] << " ataco, pero " << nombrePokemon[equipoPokemon[pokemonActivoJ]] << " se protegio." << endl;
+                    }
+                    else
+                    {
+                    int dano = (ataquePokemon[equipoEnemigo[pokemonActivoE]] - (defensaPokemon[equipoPokemon[pokemonActivoJ]] / 2)) * 1.1;
+                    if ((tipoPokemon[equipoEnemigo[pokemonActivoE]] + 1) % 4 == tipoPokemon[equipoPokemon[pokemonActivoJ]])
+                    {
+                    dano = dano * 1.2;
+                    cout << "¡El ataque enemigo es efectivo!" << endl;
+                    }
+                    hpJ[pokemonActivoJ] -= dano;
+                    cout << "Giovanni utilizo ataque pesado." << endl;
+                    cout << "Causo " << dano << " de daño a " << nombrePokemon[equipoPokemon[pokemonActivoJ]] << endl;
+                    }
+                    }    
+                    else 
+                    {
+                    cout << nombrePokemon[equipoEnemigo[pokemonActivoE]] << " ha fallado el ataque." << endl;
+                    }   
+                    break;
+                }
+                }
+                system("pause");
+                }
             }
+            //Resultado de la partida
+            bool jugadorGanador;
+            cout << "===============RESULTADO DE LA PARTIDA================" << endl;
+            if (hpJ <= 0)
+            {
+                cout << "Tu " << nombrePokemon[equipoPokemon[pokemonActivoJ]] << " se debilito. Has perdido." << endl;
+                jugadorGanador = false;
+            }
+            else
+            {
+                cout << "El " << nombrePokemon[equipoEnemigo[pokemonActivoE]] << " se debilito. Has ganado." << endl;
+                jugadorGanador = true;
+            }
+            system("pause");
         break;
         }
         case 3:
