@@ -19,6 +19,7 @@ int main() {
     int intentosProteccionJ, intentosProteccionE;
     int hpJ = vidaPokemon[opcionPokemon];
     int hpE = vidaPokemon[enemigoElegido];
+    bool proteccionJ, proteccionE = false;
 
     cout << R"(
        ⠀⢢⣤⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⢀⣀⣠⣤⣶⣶⡟⠁⠀⠀⠀⠀⠀
