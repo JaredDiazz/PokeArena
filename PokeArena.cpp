@@ -5,7 +5,7 @@ using namespace std;
 int main() {
     SetConsoleOutputCP(CP_UTF8);
     string nombreEntrenador;
-    int opcionMenu;
+    int opcionMenu, opcionPokemon;
     //TipoPokemon: fuego == 0, agua == 1, electrico == 2, planta == 3
     string nombrePokemon[8] = {"Charizard", "Arcanine", "Blastoise", "Gyarados", "Electabuzz", "Jolteon", "Venusaur", "Victreebel"};
     int tipoPokemon[8] = {0, 0, 1, 1, 2, 2, 3, 3};
@@ -51,7 +51,7 @@ int main() {
     cin >> nombreEntrenador;
     
     //Menu principal
-    bool salir = false;
+    bool salir, confirmacion = false;
     while (!salir) {
         cout << "¡Bienvenido a PokeArena, " << nombreEntrenador << "!" << endl;
         cout << "==========MENU==========" << endl;
@@ -66,9 +66,10 @@ int main() {
         switch (opcionMenu)
         {
         case 1:
-            cout << "Haz seleccionado Batalla 1 vs 1, elije tus pokemons:" << endl;
-            cout << "==========POKEMONS==========" << endl;
+            cout << "Haz seleccionado Batalla 1 vs 1, observa los pokemons disponibles:" << endl;
+            cout << "====================POKEMONS====================" << endl;
             for (int i = 0; i < 8; i++) {
+                //Modificacion para mostrar en el for el nombre del tipo con un color acorde a este en lugar del numero
                 string nombreTipo;
                 string colorTipo;
                 switch (tipoPokemon[i]){
@@ -78,7 +79,24 @@ int main() {
                     case 3: nombreTipo =  "Planta"; colorTipo = "\033[32m"; break;
                 }
                 cout << i << ". " << nombrePokemon[i] << " Tipo: " << colorTipo << nombreTipo << "\033[0m" << " HP: " << vidaPokemon[i] << " ATK: " << ataquePokemon[i] << " DEF: " << defensaPokemon[i] << endl;
-                cout << "============================" << endl;
+                cout << "================================================" << endl;
+            }
+
+            while (!confirmacion){
+                cout << "Elije tu pokemon: ";
+                cin >> opcionPokemon;
+                //Validacion de la opcion
+                if (opcionPokemon < 0 || opcionPokemon > 7){
+                    cout << "Ingresa una opcion valida." << endl;
+                    continue;
+                }
+                cout << "Haz seleccionado a " << nombrePokemon[opcionPokemon] << endl;
+                int eleccion;
+                cout << "¿Estas seguro de tu eleccion? 1.Si 2.No";
+                cin >> eleccion;
+                if (eleccion == 1){
+                    confirmacion == true;
+                }          
             }
         break;
         case 2:
