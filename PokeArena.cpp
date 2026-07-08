@@ -1,8 +1,11 @@
 #include <iostream>
 #include <windows.h>
+#include <cstdlib> 
+#include <ctime>
 using namespace std;
 
 int main() {
+    srand(time(0));
     SetConsoleTitleA("PokeArena");
     SetConsoleOutputCP(CP_UTF8);
     string nombreEntrenador;
@@ -387,7 +390,7 @@ int main() {
                 case 1:
                 {
                     int dano = ataquePokemon[equipoPokemon[pokemonActivoJ]] - (defensaPokemon[equipoEnemigo[pokemonActivoE]] / 2);
-                    if ((tipoPokemon[equipoPokemon[pokemonActivoJ]] + 1) / 4 == tipoPokemon[equipoEnemigo[pokemonActivoE]])
+                    if ((tipoPokemon[equipoPokemon[pokemonActivoJ]] + 1) % 4 == tipoPokemon[equipoEnemigo[pokemonActivoE]])
                     {
                         dano = dano * 1.2;
                         cout << "¡El ataque es efectivo!" << endl;
@@ -538,14 +541,14 @@ int main() {
             //Resultado de la partida
             bool jugadorGanador;
             cout << "===============RESULTADO DE LA PARTIDA================" << endl;
-            if (hpJ <= 0)
+            if (hpJ[0] <= 0 && hpJ[1] <= 0)
             {
                 cout << "Tu " << nombrePokemon[equipoPokemon[pokemonActivoJ]] << " se debilito. Has perdido." << endl;
                 jugadorGanador = false;
             }
             else
             {
-                cout << "El " << nombrePokemon[equipoEnemigo[pokemonActivoE]] << " se debilito. Has ganado." << endl;
+                cout << "Has debilita a los pokemons enemigos. Has ganado." << endl;
                 jugadorGanador = true;
             }
             system("pause");
