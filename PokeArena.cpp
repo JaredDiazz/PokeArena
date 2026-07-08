@@ -140,7 +140,7 @@ int main() {
                     case 1:
                     {
                         int dano = ataquePokemon[opcionPokemon] - (defensaPokemon[enemigoElegido] / 2);
-                        if ((tipoPokemon[opcionPokemon] + 1) / 4 == tipoPokemon[enemigoElegido]){
+                        if ((tipoPokemon[opcionPokemon] + 1) % 4 == tipoPokemon[enemigoElegido]){
                             dano = dano * 1.2;
                             cout << "¡El ataque es efectivo!" << endl;
                         }
@@ -489,7 +489,7 @@ int main() {
                 break;
                 }
                 //Turno de la cpu donde va seleccion un ataque al azar
-                if (hpE[equipoEnemigo[pokemonActivoE]] > 0)
+                if (hpE[pokemonActivoE] > 0)
                 {
                 int accionE = rand() % 2 + 1;
                 switch (accionE) {
