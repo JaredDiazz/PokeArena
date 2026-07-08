@@ -3,6 +3,7 @@
 using namespace std;
 
 int main() {
+    SetConsoleTitleA("PokeArena");
     SetConsoleOutputCP(CP_UTF8);
     string nombreEntrenador;
     int opcionMenu, opcionPokemon, enemigoElegido, equipoPokemon[2], equipoEnemigo[2];
