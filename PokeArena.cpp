@@ -121,10 +121,12 @@ int main() {
             //Inicio del combate 1v1
             while (hpJ > 0 && hpE > 0)
             {
+                system("cls");
                 proteccionJ = false;
                 cout << "====================COMBATE POKEMON====================" << endl;
                 cout << "HP de " << nombrePokemon[opcionPokemon] << ": " << hpJ << "            HP de " << nombrePokemon[enemigoElegido] << ": " << hpE << endl;
                 cout << "¿Que haras? \n 1. Ataque rapido \n 2. Ataque pesado \n 3. Proteccion" << endl;
+                cout << "=======================================================" << endl;
                 int accionJ;
                 cin >> accionJ;
                 //Calculos del combate
@@ -257,6 +259,7 @@ int main() {
                         break;
                     }
                     }
+                    system("pause");
                 }
             }
         break;
