@@ -184,9 +184,22 @@ int main() {
                         {
                             precision = 3;
                         }
+                        int probabilidad = rand() % 100;
+                        if (probabilidad < precision)
+                        {
+                            proteccionJ = true;
+                            cout << nombrePokemon[opcionPokemon] << " se protegio." << endl;
+                        }
+                        else
+                        {
+                            proteccionJ = false;
+                            cout << nombrePokemon[opcionPokemon] << " intento protegerse pero fallo." << endl;
+                        }
+                        intentosProteccionJ++;
                         break;
                     }
                 }
+                
             }
         break;
         }
