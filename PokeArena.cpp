@@ -468,7 +468,7 @@ int main() {
                     else
                     {
                         pokemonActivoJ = pokemonBanca;
-                        cout << nombrePokemon[equipoPokemon[pokemonActivoJ]] << " yo te elijo.";
+                        cout << nombrePokemon[equipoPokemon[pokemonActivoJ]] << " yo te elijo." << endl;
                     }
                     intentosProteccionJ = 0;
                     break;
