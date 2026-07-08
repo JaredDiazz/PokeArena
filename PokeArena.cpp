@@ -22,6 +22,7 @@ int main() {
     int intentosProteccionE = 0;
     bool proteccionJ = false;
     bool proteccionE = false;
+    int accionJ;
     
 
     cout << R"(
@@ -56,7 +57,7 @@ int main() {
              (PRESIONA ENTER PARA COMENZAR EL JUEGO)
     )";
     cin.get();
-    
+    system("cls");
     //Peticion nombre jugador
     cout << "Ingresa tu nombre de entrenador: ";
     cin >> nombreEntrenador;
@@ -121,7 +122,17 @@ int main() {
                 enemigoElegido = rand() % 8;
             }
             cout << "Lucharas contra " << nombrePokemon[enemigoElegido] << endl;
+            //Inicio del combate 1v1
+            cout << "====================COMBATE POKEMON====================" << endl;
+            while (hpJ > 0 && hpE > 0)
+            {
+                proteccionJ = false;
+                cout << "HP de " << nombrePokemon[opcionPokemon] << ": " << hpJ << "           | HP de " << nombrePokemon[enemigoElegido] << ": " << hpE << endl;
+                cout << "¿Que haras? \n 1. Ataque rapido \n 2. Ataque pesado \n 3. Proteccion" << endl;
+                cin >> accionJ;
+            }
             
+
 
         break;
         }
