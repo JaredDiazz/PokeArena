@@ -335,7 +335,7 @@ int main() {
                 equipoEnemigo[0] = rand() % 8;
             }        
             equipoEnemigo[1] = rand() % 8;
-            while (equipoEnemigo[1] == equipoPokemon[0] || equipoEnemigo[1] == equipoPokemon[1])   {
+            while (equipoEnemigo[1] == equipoPokemon[0] || equipoEnemigo[1] == equipoPokemon[1] || equipoEnemigo[1] == equipoEnemigo[0])   {
                 equipoEnemigo[1] = rand() % 8;
             }        
             cout << "Lucharas contra " << nombrePokemon[equipoEnemigo[0]] << " y " << nombrePokemon[equipoEnemigo[1]] << endl;    
