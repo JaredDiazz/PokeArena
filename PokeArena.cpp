@@ -5,7 +5,7 @@ using namespace std;
 int main() {
     SetConsoleOutputCP(CP_UTF8);
     string nombreEntrenador;
-    int opcionMenu, opcionPokemon, equipoPokemon[2];
+    int opcionMenu, opcionPokemon, enemigoElegido, equipoPokemon[2];
     //TipoPokemon: fuego == 0, agua == 1, electrico == 2, planta == 3
     string nombrePokemon[8] = {"Charizard", "Arcanine", "Blastoise", "Gyarados", "Electabuzz", "Jolteon", "Venusaur", "Victreebel"};
     int tipoPokemon[8] = {0, 0, 1, 1, 2, 2, 3, 3};
@@ -101,6 +101,12 @@ int main() {
                     confirmacion = true;
                 }          
             }
+            //Eleccion de la cpu del pokemon enemigo y validacion para que no sea el mismo del jugador
+            int enemigoElegido = rand() % 8;
+            while (enemigoElegido == opcionPokemon){
+                enemigoElegido = rand() % 8;
+            }
+            cout << "Lucharas contra " << nombrePokemon[enemigoElegido] << endl;
         }
         break;
         case 2:
