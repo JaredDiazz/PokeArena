@@ -555,11 +555,16 @@ int main() {
         break;
         }
         case 3:
-        break;
+        {
+
+            break;
+        }
         case 4:
-        salir = true;
-        cout << "¡Gracias por jugar a PokeArena!" << endl;
-        break;
+        {
+            salir = true;
+            cout << "¡Gracias por jugar a PokeArena!" << endl;
+            break;
+        }
         default:
         cout << "Ingresa una opcion valida." << endl;
             break;
