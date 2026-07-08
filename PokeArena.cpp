@@ -130,6 +130,7 @@ int main() {
                 cin >> accionJ;
                 //Calculos del combate
                 switch(accionJ){
+                    //Utilizacion de ataque rapido
                     case 1:
                     {
                         int dano = ataquePokemon[opcionPokemon] - (defensaPokemon[enemigoElegido] / 2);
@@ -143,6 +144,7 @@ int main() {
                         intentosProteccionJ = 0;
                         break;
                     }
+                    //Utilizacion de ataque pesado
                     case 2:
                     {
                         int precision = 50;
@@ -166,7 +168,24 @@ int main() {
                         intentosProteccionJ = 0;
                         break;
                     }
-                    
+                    //Utilizacion de proteccion
+                    case 3:
+                    {
+                        int precision;
+                        if (intentosProteccionJ == 0)
+                        {
+                            precision = 100;
+                        }
+                        else if (intentosProteccionJ == 1)
+                        {
+                            precision = 30;
+                        }
+                        else
+                        {
+                            precision = 3;
+                        }
+                        break;
+                    }
                 }
             }
         break;
