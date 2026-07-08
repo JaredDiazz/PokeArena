@@ -5,7 +5,7 @@ using namespace std;
 int main() {
     SetConsoleOutputCP(CP_UTF8);
     string nombreEntrenador;
-    int opcionMenu, opcionPokemon;
+    int opcionMenu, opcionPokemon, equipoPokemon[2];
     //TipoPokemon: fuego == 0, agua == 1, electrico == 2, planta == 3
     string nombrePokemon[8] = {"Charizard", "Arcanine", "Blastoise", "Gyarados", "Electabuzz", "Jolteon", "Venusaur", "Victreebel"};
     int tipoPokemon[8] = {0, 0, 1, 1, 2, 2, 3, 3};
@@ -50,7 +50,7 @@ int main() {
     cin >> nombreEntrenador;
     
     //Menu principal
-    bool salir, confirmacion = false;
+    bool salir = false;
     while (!salir) {
         cout << "¡Bienvenido a PokeArena, " << nombreEntrenador << "!" << endl;
         cout << "==========MENU==========" << endl;
@@ -65,6 +65,7 @@ int main() {
         switch (opcionMenu)
         {
         case 1:
+        {
             //Listado de pokemons
             cout << "Haz seleccionado Batalla 1 vs 1, observa los pokemons disponibles:" << endl;
             cout << "====================POKEMONS====================" << endl;
@@ -82,6 +83,7 @@ int main() {
                 cout << "================================================" << endl;
             }
             //Eleccion de pokemon del jugador
+            bool confirmacion = false;
             while (!confirmacion){
                 cout << "Elije tu pokemon: ";
                 cin >> opcionPokemon;
@@ -96,11 +98,13 @@ int main() {
                 cout << "¿Estas seguro de tu eleccion? 1.Si 2.No" << endl;
                 cin >> eleccion;
                 if (eleccion == 1){
-                    confirmacion == true;
+                    confirmacion = true;
                 }          
             }
+        }
         break;
         case 2:
+        {
             //Listado de pokemons
             cout << "Haz seleccionado Batalla 2 vs 2, observa los pokemons disponibles:" << endl;
             cout << "====================POKEMONS====================" << endl;
@@ -118,11 +122,11 @@ int main() {
                 cout << "================================================" << endl;
             }
         //Creacion de la eleccion de dos pokemons para el combate 2v2
-            int equipoPokemon[2];
             for (int i = 0; i < 2; i++)
             {
+                bool confirmacion = false;
                 while(!confirmacion){
-                    cout << "Elije tu pokemon: ";
+                    cout << "Elije tu pokemon: Numero " << (i + 1) << endl;
                     cin >> opcionPokemon;
                     //Validacion
                     if  (opcionPokemon < 0 || opcionPokemon > 7)
@@ -143,12 +147,12 @@ int main() {
                     cin >> eleccion;
                     if (eleccion == 1)
                     {
-                        equipoPokemon[i] = eleccion;
-                        confirmacion == true;
+                        equipoPokemon[i] = opcionPokemon;
+                        confirmacion = true;
                     }
                 }
             }
-            
+        }
         break;
         case 3:
         break;
