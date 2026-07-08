@@ -155,6 +155,7 @@ int main() {
                                 dano = dano * 1.2;
                                 cout << "¡El ataque es efectivo!" << endl;
                             }
+                            hpE -= dano;
                             cout << nombreEntrenador << " utilizo ataque pesado." << endl;
                             cout << "Causo " << dano << " de daño a " << nombrePokemon[enemigoElegido] << endl;
                         }
