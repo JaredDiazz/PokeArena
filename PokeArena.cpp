@@ -386,18 +386,69 @@ int main() {
                 {
                 case 1:
                 {
-
-                break;
+                    int dano = ataquePokemon[equipoPokemon[pokemonActivoJ]] - (defensaPokemon[equipoEnemigo[pokemonActivoE]] / 2);
+                    if ((tipoPokemon[equipoPokemon[pokemonActivoJ]] + 1) / 4 == tipoPokemon[equipoEnemigo[pokemonActivoE]])
+                    {
+                        dano = dano * 1.2;
+                        cout << "¡El ataque es efectivo!" << endl;
+                    }
+                    hpE[pokemonActivoE] -= dano;
+                    cout << nombreEntrenador << " utilizo ataque rapido." << endl;
+                    cout << "Causo " << dano << " de daño a " << nombrePokemon[equipoEnemigo[pokemonActivoE]] << endl;
+                    intentosProteccionJ = 0;
+                    break;
                 }
                 case 2:
                 {
-
-                break;
+                    int precision = 50;
+                    int probabilidad = rand() % 100;
+                    if (probabilidad < precision) 
+                    {
+                    int dano = (ataquePokemon[equipoPokemon[pokemonActivoJ]] - (defensaPokemon[equipoEnemigo[pokemonActivoE]] / 2)) * 1.1;
+                    if ((tipoPokemon[equipoPokemon[pokemonActivoJ]] + 1) % 4 == tipoPokemon[equipoEnemigo[pokemonActivoE]])
+                    {
+                    dano = dano * 1.2;
+                    cout << "¡El ataque es efectivo!" << endl;
+                    }
+                    hpE[pokemonActivoE] -= dano;
+                    cout << nombreEntrenador << " utilizo ataque pesado." << endl;
+                    cout << "Causo " << dano << " de daño a " << nombrePokemon[equipoEnemigo[pokemonActivoE]] << endl;
+                    }
+                    else 
+                    {
+                    cout << nombrePokemon[equipoEnemigo[pokemonActivoJ]] << " ha fallado el ataque." << endl;
+                    }
+                    intentosProteccionJ = 0;
+                    break;
                 }
                 case 3:
                 {
-
-                break;
+                    int precision;
+                    if (intentosProteccionJ == 0)
+                    {
+                    precision = 100;
+                    }
+                    else if (intentosProteccionJ == 1)
+                    {
+                    precision = 30;
+                    }
+                    else
+                    {
+                    precision = 3;
+                    }
+                    int probabilidad = rand() % 100;
+                    if (probabilidad < precision)
+                    {
+                    proteccionJ = true;
+                    cout << nombrePokemon[equipoPokemon[pokemonActivoJ]] << " se protegio." << endl;
+                    }
+                    else
+                    {
+                    proteccionJ = false;
+                    cout << nombrePokemon[equipoPokemon[pokemonActivoJ]] << " intento protegerse pero fallo." << endl;
+                    }
+                    intentosProteccionJ++;
+                    break;
                 }
                 case 4:
                 {
