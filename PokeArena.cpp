@@ -377,7 +377,7 @@ int main() {
                 }
                 proteccionJ = false;
                 cout << "====================COMBATE POKEMON====================" << endl;
-                cout << "HP de " << nombrePokemon[equipoEnemigo[pokemonActivoJ]] << ": " << hpJ[pokemonActivoJ] << "            HP de " << nombrePokemon[equipoEnemigo[pokemonActivoE]] << ": " << hpE[pokemonActivoE] << endl;
+                cout << "HP de " << nombrePokemon[equipoPokemon[pokemonActivoJ]] << ": " << hpJ[pokemonActivoJ] << "            HP de " << nombrePokemon[equipoEnemigo[pokemonActivoE]] << ": " << hpE[pokemonActivoE] << endl;
                 cout << "¿Que haras? \n 1. Ataque rapido \n 2. Ataque pesado \n 3. Proteccion \n 4. Cambiar pokemon" << endl;
                 cout << "=======================================================" << endl;
                 int accionJ;
