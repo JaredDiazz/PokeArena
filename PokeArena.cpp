@@ -69,7 +69,7 @@ int main() {
             cout << "Haz seleccionado Batalla 1 vs 1, elije tus pokemons:" << endl;
             cout << "==========POKEMONS==========" << endl;
             for (int i = 0; i < 8; i++) {
-                cout << "      " << i << ". " << nombrePokemon[i] << endl;
+                cout << i << ". " << nombrePokemon[i] << " Tipo: " << tipoPokemon[i] << " HP: " << vidaPokemon[i] << " ATK: " << ataquePokemon[i] << " DEF: " << defensaPokemon[i] << endl;
                 cout << "============================" << endl;
             }
         break;
