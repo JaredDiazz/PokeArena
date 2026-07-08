@@ -5,7 +5,8 @@ using namespace std;
 int main() {
     SetConsoleOutputCP(CP_UTF8);
     string nombreEntrenador;
-    // tipoPokemon: fuego == 0, agua == 1, electrico == 2, planta == 3
+    int opcion;
+    //TipoPokemon: fuego == 0, agua == 1, electrico == 2, planta == 3
     string nombrePokemon[8] = {"Charizard", "Arcanine", "Blastoise", "Gyarados", "Electabuzz", "Jolteon", "Venusaur", "Victreebel"};
     int tipoPokemon[8] = {0, 0, 1, 1, 2, 2, 3, 3};
     int vidaPokemon[8] = {200, 200, 200, 200, 200, 200, 200, 200};
@@ -45,11 +46,24 @@ int main() {
             (PRESIONA ENTER PARA COMENZAR EL JUEGO)
     )";
     cin.get();
-    
+    //Peticion nombre jugador
     cout << "Ingresa tu nombre de entrenador: ";
     cin >> nombreEntrenador;
+    
+    //Menu principal
+    while (true) {
+        cout << "Bienvenido a PokeArena, " << nombreEntrenador << "!" << endl;
+        cout << "==========MENU==========" << endl;
+        cout << "||  1. Batalla 1v1    ||" << endl;
+        cout << "||  2. Batalla 2v2    ||" << endl;
+        cout << "||  3. Historial      ||" << endl;
+        cout << "||  4. Salir          ||" << endl;
+        cout << "========================" << endl;
+        cout << "Ingresa una opcion: ";
+        cin >> opcion;
 
-    cout << nombreEntrenador;
+        cout << opcion;
+    }
 
     return 0;  
 }
