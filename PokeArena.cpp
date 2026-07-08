@@ -130,10 +130,23 @@ int main() {
                 cout << "HP de " << nombrePokemon[opcionPokemon] << ": " << hpJ << "            HP de " << nombrePokemon[enemigoElegido] << ": " << hpE << endl;
                 cout << "¿Que haras? \n 1. Ataque rapido \n 2. Ataque pesado \n 3. Proteccion" << endl;
                 cin >> accionJ;
+                //Calculos del combate
+                switch(accionJ){
+                    case 1:
+                    {
+                        int dano = ataquePokemon[opcionPokemon] - (defensaPokemon[enemigoElegido] / 2);
+                        if ((tipoPokemon[opcionPokemon] + 1) / 4 == tipoPokemon[enemigoElegido]){
+                            dano = dano * 1.5;
+                            cout << "¡El ataque es efectivo!" << endl;
+                        }
+                        hpE -= dano;
+                        cout << nombreEntrenador << " utilizo ataque rapido." << endl;
+                        cout << "Causo " << dano << " de daño a " << nombrePokemon[enemigoElegido] << endl;
+                        intentosProteccionJ = 0;
+                        break;
+                    }
+                }
             }
-            
-
-
         break;
         }
         case 2:
