@@ -6,13 +6,19 @@ int main() {
     SetConsoleTitleA("PokeArena");
     SetConsoleOutputCP(CP_UTF8);
     string nombreEntrenador;
+    //Variables de menus y elecciones
     int opcionMenu, opcionPokemon, enemigoElegido, equipoPokemon[2], equipoEnemigo[2];
     //TipoPokemon: fuego == 0, agua == 1, electrico == 2, planta == 3
+    //Stats de los pokemon
     string nombrePokemon[8] = {"Charizard", "Arcanine", "Blastoise", "Gyarados", "Electabuzz", "Jolteon", "Venusaur", "Victreebel"};
     int tipoPokemon[8] = {0, 0, 1, 1, 2, 2, 3, 3};
     int vidaPokemon[8] = {200, 200, 200, 200, 200, 200, 200, 200};
     int ataquePokemon[8] = {20, 20, 20, 20, 20, 20, 20, 20};
     int defensaPokemon[8] = {50, 50, 50, 50, 50, 50, 50, 50};
+    //Variables de combate
+    int intentosProteccionJ, intentosProteccionE;
+    int hpJ = vidaPokemon[opcionPokemon];
+    int hpE = vidaPokemon[enemigoElegido];
 
     cout << R"(
        ⠀⢢⣤⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⢀⣀⣠⣤⣶⣶⡟⠁⠀⠀⠀⠀⠀
