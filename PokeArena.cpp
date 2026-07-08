@@ -5,7 +5,7 @@ using namespace std;
 int main() {
     SetConsoleOutputCP(CP_UTF8);
     string nombreEntrenador;
-    int opcion;
+    int opcionMenu;
     //TipoPokemon: fuego == 0, agua == 1, electrico == 2, planta == 3
     string nombrePokemon[8] = {"Charizard", "Arcanine", "Blastoise", "Gyarados", "Electabuzz", "Jolteon", "Venusaur", "Victreebel"};
     int tipoPokemon[8] = {0, 0, 1, 1, 2, 2, 3, 3};
@@ -51,8 +51,9 @@ int main() {
     cin >> nombreEntrenador;
     
     //Menu principal
-    while (true) {
-        cout << "Bienvenido a PokeArena, " << nombreEntrenador << "!" << endl;
+    bool salir = false;
+    while (!salir) {
+        cout << "¡Bienvenido a PokeArena, " << nombreEntrenador << "!" << endl;
         cout << "==========MENU==========" << endl;
         cout << "||  1. Batalla 1v1    ||" << endl;
         cout << "||  2. Batalla 2v2    ||" << endl;
@@ -60,10 +61,10 @@ int main() {
         cout << "||  4. Salir          ||" << endl;
         cout << "========================" << endl;
         cout << "Ingresa una opcion: ";
-        cin >> opcion;
-        cout << opcion;
+        cin >> opcionMenu;
+        cout << opcionMenu;
 
-        switch (opcion)
+        switch (opcionMenu)
         {
         case 1:
         break;
@@ -72,8 +73,11 @@ int main() {
         case 3:
         break;
         case 4:
+        salir = true;
+        cout << "¡Gracias por jugar a PokeArena!" << endl;
         break;
         default:
+        cout << "Ingresa una opcion valida." << endl;
             break;
         }
     }
