@@ -123,11 +123,11 @@ int main() {
             }
             cout << "Lucharas contra " << nombrePokemon[enemigoElegido] << endl;
             //Inicio del combate 1v1
-            cout << "====================COMBATE POKEMON====================" << endl;
             while (hpJ > 0 && hpE > 0)
             {
                 proteccionJ = false;
-                cout << "HP de " << nombrePokemon[opcionPokemon] << ": " << hpJ << "           | HP de " << nombrePokemon[enemigoElegido] << ": " << hpE << endl;
+                cout << "====================COMBATE POKEMON====================" << endl;
+                cout << "HP de " << nombrePokemon[opcionPokemon] << ": " << hpJ << "            HP de " << nombrePokemon[enemigoElegido] << ": " << hpE << endl;
                 cout << "¿Que haras? \n 1. Ataque rapido \n 2. Ataque pesado \n 3. Proteccion" << endl;
                 cin >> accionJ;
             }
