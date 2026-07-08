@@ -12,9 +12,9 @@ int main() {
     //Stats de los pokemon
     string nombrePokemon[8] = {"Charizard", "Arcanine", "Blastoise", "Gyarados", "Electabuzz", "Jolteon", "Venusaur", "Victreebel"};
     int tipoPokemon[8] = {0, 0, 1, 1, 2, 2, 3, 3};
-    int vidaPokemon[8] = {200, 200, 200, 200, 200, 200, 200, 200};
-    int ataquePokemon[8] = {80, 80, 80, 80, 80, 80, 80, 80};
-    int defensaPokemon[8] = {20, 20, 20, 20, 20, 20, 20, 20};
+    int vidaPokemon[8] = {150, 190, 220, 180, 130, 160, 210, 170};
+    int ataquePokemon[8] = {90, 70, 55, 75, 100, 95, 60, 80};
+    int defensaPokemon[8] = {60, 40, 25, 45, 70, 45, 30, 50};
     cout << R"(
        ⠀⢢⣤⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⢀⣀⣠⣤⣶⣶⡟⠁⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣷⣶⣦⣤⣀⡀⠀⠀⠀⠀⢀⣀⣤⣴⣶⣶⣶⣶⣶⣶⣦⣤⣀⡀⢀⣀⣠⣤⣴⣶⣾⣿⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀
@@ -134,7 +134,7 @@ int main() {
                     {
                         int dano = ataquePokemon[opcionPokemon] - (defensaPokemon[enemigoElegido] / 2);
                         if ((tipoPokemon[opcionPokemon] + 1) / 4 == tipoPokemon[enemigoElegido]){
-                            dano = dano * 1.5;
+                            dano = dano * 1.2;
                             cout << "¡El ataque es efectivo!" << endl;
                         }
                         hpE -= dano;
@@ -143,6 +143,29 @@ int main() {
                         intentosProteccionJ = 0;
                         break;
                     }
+                    case 2:
+                    {
+                        int precision = 50;
+                        int probabilidad = rand() % 100;
+                        if (probabilidad < precision) 
+                        {
+                            int dano = (ataquePokemon[opcionPokemon] - (defensaPokemon[enemigoElegido] / 2)) * 1.1;
+                            if ((tipoPokemon[opcionPokemon] + 1) % 4 == tipoPokemon[enemigoElegido])
+                            {
+                                dano = dano * 1.2;
+                                cout << "¡El ataque es efectivo!" << endl;
+                            }
+                            cout << nombreEntrenador << " utilizo ataque pesado." << endl;
+                            cout << "Causo " << dano << " de daño a " << nombrePokemon[enemigoElegido] << endl;
+                        }
+                        else 
+                        {
+                            cout << nombrePokemon[opcionPokemon] << " ha fallado el ataque." << endl;
+                        }
+                        intentosProteccionJ = 0;
+                        break;
+                    }
+                    
                 }
             }
         break;
