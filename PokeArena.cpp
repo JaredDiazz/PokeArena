@@ -345,7 +345,40 @@ int main() {
             int pokemonActivoE = 0;
             int intentosProteccionJ = 0;
             bool proteccionJ = false;
-
+            //Calculo del combate 2v2
+            while ((hpJ[0] > 0 || hpJ[1] > 0) && (hpE[0] > 0 || hpE[1] > 0)){
+                system("cls");
+                //Cambio pokemon pero este es el que no es manual, por si debilitan al pokemon que va delante
+                if (hpJ[pokemonActivoJ] <= 0)
+                {
+                    if (pokemonActivoJ == 0)
+                    {
+                        pokemonActivoJ = 1;
+                    }
+                    else 
+                    {
+                        pokemonActivoJ = 0;
+                    }
+                    cout << nombrePokemon[equipoPokemon[pokemonActivoJ]] << " yo te elijo." << endl;
+                }
+                if (hpE[pokemonActivoE] <= 0)
+                {
+                    if (pokemonActivoE)
+                    {
+                        pokemonActivoE = 1;
+                    }
+                    else
+                    {
+                        pokemonActivoE = 0;
+                    }
+                    cout << "El " << nombrePokemon[equipoEnemigo[pokemonActivoE]] << " enemigo entra al combate." << endl;
+                }
+                proteccionJ = false;
+                cout << "====================COMBATE POKEMON====================" << endl;
+                cout << "HP de " << nombrePokemon[equipoEnemigo[pokemonActivoJ]] << ": " << hpJ[pokemonActivoJ] << "            HP de " << nombrePokemon[equipoEnemigo[pokemonActivoE]] << ": " << hpE[pokemonActivoE] << endl;
+                cout << "¿Que haras? \n 1. Ataque rapido \n 2. Ataque pesado \n 3. Proteccion \n 4. Cambiar pokemon" << endl;
+                cout << "=======================================================" << endl;
+            }
         break;
         }
         case 3:
